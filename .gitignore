@@ -1,0 +1,49 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+credit-morpheus-fund/credit-morpheus-fund-common/credit-morpheus-fund-common.iml
+credit-morpheus-fund/credit-morpheus-fund-common/target/
+credit-morpheus-fund/credit-morpheus-fund-service/credit-morpheus-fund-service.iml
+credit-morpheus-fund/credit-morpheus-fund-service/target/
+credit-morpheus-fund/credit-morpheus-fund-spi/credit-morpheus-fund-spi.iml
+credit-morpheus-fund/credit-morpheus-fund-spi/target/
+credit-morpheus-fund/credit-morpheus-fund.iml
+credit-morpheus-limit/credit-morpheus-limit-service/credit-morpheus-limit-service.iml
+credit-morpheus-limit/credit-morpheus-limit-service/target/
+credit-morpheus-limit/credit-morpheus-limit-spi/credit-morpheus-limit-spi.iml
+credit-morpheus-limit/credit-morpheus-limit-spi/target/
+credit-morpheus-limit/credit-morpheus-limit.iml
+credit-morpheus-workflow/credit-morpheus-workflow-service/credit-morpheus-workflow-service.iml
+credit-morpheus-workflow/credit-morpheus-workflow-service/target/
+credit-morpheus-workflow/credit-morpheus-workflow-spi/credit-morpheus-workflow-spi.iml
+credit-morpheus-workflow/credit-morpheus-workflow-spi/target/
+credit-morpheus-workflow/credit-morpheus-workflow.iml
+/.gradle/
+/.metadata/
+/.recommenders/
+/.settings/
+.DS_Store
+logs/
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

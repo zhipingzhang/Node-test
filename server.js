@@ -8,9 +8,9 @@ var cache = {};
 var server = http.createServer(function (req, res) {
     var filePath = false;
     if (req.url == '/') {
-        filePath = '../public/index.html';
+        filePath = 'public/index.html';
     } else {
-        filePath = '../public' + req.url;
+        filePath = 'public' + req.url;
     }
     var absPath = "./" + filePath;
     serverStatic(res, cache, absPath);
@@ -50,3 +50,6 @@ function serverStatic(response, cache, absPath) {
         })
     }
 }
+
+var chatServer = require('./lib/chat_server');
+chatServer.listen(server);

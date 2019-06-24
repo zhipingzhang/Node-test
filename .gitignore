@@ -1,5 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
+node_modules/
 credit-morpheus-fund/credit-morpheus-fund-common/credit-morpheus-fund-common.iml
 credit-morpheus-fund/credit-morpheus-fund-common/target/
 credit-morpheus-fund/credit-morpheus-fund-service/credit-morpheus-fund-service.iml

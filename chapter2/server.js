@@ -8,9 +8,9 @@ var cache = {};
 var server = http.createServer(function (req, res) {
     var filePath = false;
     if (req.url == '/') {
-        filePath = 'public/index.html';
+        filePath = '../public/index.html';
     } else {
-        filePath = 'public' + req.url;
+        filePath = '../public' + req.url;
     }
     var absPath = "./" + filePath;
     serverStatic(res, cache, absPath);
@@ -26,7 +26,7 @@ function send404(response) {
 }
 
 function sendFile(response, filePath, fileContents) {
-    response.writeHead(200, {'Content-Type': mime.getType(path.basename(filePath))});
+    response.writeHead(200, {'Content-Type': mime.lookup(path.basename(filePath))});
     response.end(fileContents);
 }
 
@@ -51,5 +51,5 @@ function serverStatic(response, cache, absPath) {
     }
 }
 
-var chatServer = require('./lib/chat_server');
+var chatServer = require('../lib/chat_server');
 chatServer.listen(server);

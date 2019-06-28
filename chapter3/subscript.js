@@ -25,17 +25,25 @@ channel.on('shutdown', function () {
     channel.removeAllListeners('broadcast');
 });
 
+var tempBody = {};
+
 var server = net.createServer(function (client) {
     var id = client.remoteAddress + ':' + client.remotePort;
     console.log('客户端已连接:' + id);
     client.write('hello\r\n');
     channel.emit('join', id, client);
+    client.setEncoding('UTF-8');
+    tempBody[id] = '';
     client.on('data', function (data) {
         data = data.toString();
-        if (data == "shutdown\r\n") {
-            channel.emit('shutdown');
+        tempBody[id] = tempBody[id] + data;
+        if (data.indexOf('\r\n') >= 0) {
+            if (tempBody[id] == "shutdown\r\n") {
+                channel.emit('shutdown');
+            }
+            channel.emit('broadcast', id, tempBody[id]);
+            tempBody[id] = '';
         }
-        channel.emit('broadcast', id, data);
     });
     client.on('end', function () {
         channel.emit('leave', id);

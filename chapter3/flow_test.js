@@ -4,7 +4,8 @@ flow.series([
     function (callback) {
         setTimeout(function () {
             console.log('I execute first.');
-            callback();
+            // 第一个参数是err
+            callback(null, 'xxx');
         }, 1000);
     },
     function (callback) {

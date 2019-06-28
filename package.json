@@ -4,6 +4,7 @@
   "description": "",
   "license": "ISC",
   "dependencies": {
+    "connect": "^3.7.0",
     "htmlparser": "^1.7.7",
     "mime": "~1.2.7",
     "nimble": "0.0.2",

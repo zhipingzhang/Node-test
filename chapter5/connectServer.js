@@ -10,4 +10,17 @@ function hello(req, res) {
     res.end('hello world');
 }
 
-connect().use('/', logger).use('/', hello).listen(3000);
+connect().use('/', logger).use(setup(':method :url')).use('/', hello).listen(3000);
+
+
+function setup(format) {
+    var regexp = /:(\w+)/g;
+
+    return function logger(req, res, next) {
+        var str = format.replace(regexp, function (match, property) {
+            return req[property];
+        });
+        console.log(str);
+        next();
+    }
+}
